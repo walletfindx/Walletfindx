@@ -1,0 +1,16 @@
+/* Custom overrides to force refresh */
+.text-muted,
+p[style="color: #9370DB;"] {
+    color: #9370DB !important;
+}
+
+.crypto-opportunity-message {
+    color: #9370DB !important;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Force reload of Bitcoin icon */
+.crypto-card[data-crypto="BTC"] svg text {
+    fill: #FFCC00 !important;
+}

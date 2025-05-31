@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="crypto-selection-container">
+    <h2 class="text-center mb-4">Select Cryptocurrency</h2>
+    
+    <form action="{{ url_for('select_crypto') }}" method="post">
+        <div class="crypto-options-container">
+            <div class="crypto-options-row">
+                <!-- Bitcoin Option -->
+                <div class="crypto-card" data-crypto="BTC">
+                    <div class="crypto-icon">
+                        <!-- Simple yellow B icon for Bitcoin -->
+                        <svg width="60" height="60" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="#3A3A3A"/>
+                            <text x="50" y="65" font-family="Arial" font-size="60" font-weight="bold" fill="#FFCC00" text-anchor="middle">B</text>
+                        </svg>
+                    </div>
+                    <h3 class="crypto-name">Bitcoin</h3>
+                    <p class="crypto-symbol">BTC</p>
+                </div>
+                
+                <!-- Ethereum Option -->
+                <div class="crypto-card" data-crypto="ETH">
+                    <div class="crypto-icon">
+                        <!-- Custom ETH icon -->
+                        <svg width="60" height="60" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="#3A3A3A"/>
+                            <path d="M50,15L30,50l20,12l20-12L50,15z M30,54l20,30l20-30L50,66L30,54z" fill="#AAC1EB"/>
+                        </svg>
+                    </div>
+                    <h3 class="crypto-name">Ethereum</h3>
+                    <p class="crypto-symbol">ETH</p>
+                </div>
+                
+                <!-- USDT Option -->
+                <div class="crypto-card" data-crypto="USDT">
+                    <div class="crypto-icon">
+                        <!-- Green $ symbol for USDT -->
+                        <svg width="60" height="60" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="#3A3A3A"/>
+                            <text x="50" y="65" font-family="Arial" font-size="60" font-weight="bold" fill="#28a745" text-anchor="middle">$</text>
+                        </svg>
+                    </div>
+                    <h3 class="crypto-name">Tether</h3>
+                    <p class="crypto-symbol">USDT</p>
+                </div>
+            </div>
+        </div>
+        
+        <input type="hidden" id="crypto" name="crypto" value="">
+        <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-success" id="continue-btn" disabled>Continue</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cryptoCards = document.querySelectorAll('.crypto-card');
+        const cryptoInput = document.getElementById('crypto');
+        const continueBtn = document.getElementById('continue-btn');
+        
+        cryptoCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove active class from all cards
+                cryptoCards.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked card
+                this.classList.add('active');
+                
+                // Set hidden input value
+                cryptoInput.value = this.getAttribute('data-crypto');
+                
+                // Enable continue button
+                continueBtn.disabled = false;
+            });
+        });
+    });
+</script>
+{% endblock %}

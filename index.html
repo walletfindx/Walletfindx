@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="login-container">
+    <div class="logo-section text-center mb-4">
+        <svg class="wallet-icon" width="80" height="80" viewBox="0 0 100 100">
+            <use xlink:href="#wallet-svg"></use>
+        </svg>
+        <h1 class="mt-3">WalletFindX</h1>
+        <p style="color: purple !important; font-weight: 500;">Premium Cryptocurrency Wallet Finder</p>
+        <p class="welcome-message">The world of cryptocurrency is full of hidden opportunities. <br> The wallet you discover today might change your life.</p>
+    </div>
+    
+    <div class="card login-card">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Enter Premium Code</h2>
+            
+            <form action="{{ url_for('verify_code') }}" method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="premium_code" name="premium_code" placeholder="Premium Code" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Confirm Premium</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

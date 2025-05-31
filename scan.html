@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="scan-container">
+    <div class="scan-header">
+        <h2 class="text-center mb-3">{{ selected_crypto }} Wallet Scanner</h2>
+        <p class="text-center subtitle mb-4">Blockchain Scanner &nbsp;&nbsp; Forgotten wallets - Lost wallets - Incomplete transactions</p>
+    </div>
+    
+    <div class="scan-content">
+        <!-- Hidden field to store scans remaining value -->
+        <span id="scans-remaining-value" style="display: none;">{{ session.scans_remaining }}</span>
+        
+        <div class="scan-box" id="scan-box">
+            <div id="scan-display" class="scan-display">
+                <!-- Scan display content will be added here by JavaScript -->
+                <div class="pre-scan-message">
+                    <p>Click "Start Scan" to begin searching for inactive wallets</p>
+                    <p style="color: purple; font-style: italic; margin-top: 15px;">The world of cryptocurrency is full of hidden opportunities. The wallet you discover today might change your life.</p>
+                </div>
+            </div>
+            
+            <div class="scan-result" id="scan-result" style="display: none;">
+                <div class="result-message">No inactive wallets detected in the scanned range. Try again or upgrade to Premium Scan for full access.</div>
+            </div>
+        </div>
+        
+        <div class="scan-controls mt-4">
+            <button id="start-scan" class="btn btn-success">Start Scan</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scan.js') }}"></script>
+{% endblock %}
