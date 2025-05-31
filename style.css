@@ -1,0 +1,351 @@
+/* Base Variables */
+:root {
+    --primary-color: #303030; /* Dark gray (graphite/charcoal) */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #28a745; /* Green for buttons */
+    --danger-color: #dc3545; /* Red for errors and alerts */
+    --text-color: #f0f0f0;
+    --dark-bg: #222222;
+    --card-bg: #383838;
+    --border-color: #444444;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--dark-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.offcanvas {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.logo-section {
+    margin-bottom: 2rem;
+}
+
+.welcome-message {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.premium-text {
+    color: #9370DB; /* Purple color */
+    font-size: 1rem;
+}
+
+.wallet-icon {
+    filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+/* Crypto Selection */
+.crypto-selection-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.crypto-options-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.crypto-options-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.crypto-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+}
+
+.crypto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.crypto-card.active {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.crypto-icon {
+    margin: 1rem 0;
+}
+
+.crypto-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.crypto-symbol {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Scan Page */
+.scan-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.subtitle {
+    color: #aaa;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.scan-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-display {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.pre-scan-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #aaa;
+    text-align: center;
+}
+
+.crypto-opportunity-message {
+    color: #9370DB !important; /* Purple color */
+    margin-top: 15px;
+    max-width: 80%;
+    font-style: italic;
+}
+
+.scroll-container {
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.scan-log {
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    padding: 3px 0;
+    border-bottom: 1px dotted rgba(255,255,255,0.1);
+    animation: fadeIn 0.5s ease-in;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.status-log {
+    border-left: 3px solid #4aA;
+    padding-left: 5px;
+    background-color: rgba(74, 170, 170, 0.05);
+}
+
+.init-message {
+    border-left: 3px solid #28a745;
+    padding-left: 5px;
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.completion-message {
+    border-left: 3px solid #dc3545;
+    padding-left: 5px;
+    background-color: rgba(220, 53, 69, 0.05);
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.scan-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+}
+
+.result-message {
+    color: var(--danger-color);
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem;
+}
+
+/* Hamburger Menu Content */
+.crypto-balance {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.scan-counter {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.support-section {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.support-item {
+    margin-bottom: 1rem;
+}
+
+.support-item p {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+.x-icon {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn-success {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* Animations */
+@keyframes scrollEffect {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .crypto-card {
+        margin-bottom: 1rem;
+    }
+}
